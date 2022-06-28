@@ -1,0 +1,113 @@
+\documentclass[a4paper,12pt]{ctexart}
+\usepackage{float}
+\usepackage{xltxtra} 
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+\title{学习报告}
+
+\author{唐浩 \\ 信息与计算科学　3200102118}
+
+\begin{document}
+
+\maketitle
+
+\pagestyle{empty}
+
+\section{shell文件运行}
+
+\begin{itemize}
+\item shell脚本文件内容：
+\end{itemize}
+
+\begin{verbatim}
+#!/bin/sh
+
+salutation = "Hello”
+echo $salutation
+echo “The program $0 is now running”
+echo “The second parameter was $2”
+echo “The first parameter was $1”
+echo “The parameter list was $*"
+echo “The user’s home directory is $HOME”
+echo “Please enter a new greeting”
+read salutation
+echo $salutation
+echo “The script is now complete”
+exit 0
+\end{verbatim}
+
+\begin{itemize}
+\item 尝试运行：
+\end{itemize}
+
+\begin{verbatim}
+sh try.sh
+\end{verbatim}
+
+\begin{itemize}
+\item 运行结果如下：
+\end{itemize}
+
+\begin{verbatim}
+Hello
+The program ./try_var is now running
+The second parameter was bar
+The first parameter was foo
+The parameter list was foo bar baz
+The user’s home directory is /home/rick
+Please enter a new greeting
+Sire
+Sire
+The script is now complete
+\end{verbatim}
+
+
+\begin{itemize}
+\item 工作原理：
+\end{itemize}
+
+\begin{verbatim}
+操纵参数和环境变量;
+该脚本创建变量salutation，显示其内容;
+然后显示各种参数变量和环境变量$HOME是如何存在并具有适当值的。
+\end{verbatim}
+
+\section{个人理解}
+
+对于 \verb\#!/bin/sh，虽然shell编程是以 \verb\# 为注释，但是它却不是。
+\verb\#!/bin/sh 是对shell的声明;
+
+(指此脚本使用/bin/sh(shell脚本路径)来解释执行，\verb\#!是特殊的表示符)
+
+如果没有声明，则脚本将在默认的shell中执行，默认shell是由用户所在的系统定义为执行shell脚本的shell.如果脚本被编写为在Kornshell ksh中运行，而默认运行shell脚本的为C shell csh,则脚本在执行过程中很可能失败,所以建议大家把　＂\verb\#!/bin/sh＂　当成C 语言的main函数一样。
+
+echo用于显示字符串，直接在echo后面加上想要显示的内容就好。在echo的后面，不仅可以加字符串，还可以加变量名：
+\begin{verbatim}
+#定义变量str
+str = "Hello world"
+#在echo后加上str变量，一样可以显示出来
+echr ``$str, good morning"
+
+Hello world, good morning
+\end{verbatim}
+
+echo后面接不同的引号也会有不同的效果：
+
+单引号将所有字符都看成普通字符，双引号会解释\$ , \textbackslash 和  '　这三种特殊字符，不加引号的话则会解释所有特殊字符。效果如下：
+
+\begin{table}[H]
+%\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+  \centerinng
+\begin{tabular}{|c|c|c|}
+  \hline
+  输入命令 & \tabincell{c}{输出内容} & \tabincell{c}{解释} \\ \hline
+  \tabincell{c}{echo `$USER* $(date)'} & \tabincell{c}{$USER*$(date)} & \tabincell{c}{单引号无视所有特殊字符\\ 所有字符在它眼里都是普通字符\\ 都是芸芸众生} \\ \hline
+  \tabincell{c}{echo ``$USER* $(date)"} & \tabincell{c}{qingyang*\\ 2022年 06月 28日\\ 星期二 19:49:01 CST} & \tabincell{c}{双引号会无视文件通配符\\ 但是``\$" ``\textbackslash" 会起作用} \\ \hline
+  
+\end{tabular}
+\end{table}
+
+\bibliographystyle{plain}
+\bibliography{crazyfish.bib}
+
+\end{document}
