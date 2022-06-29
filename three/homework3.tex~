@@ -1,0 +1,70 @@
+\documentclass{ctexart}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xltxtra}
+\usepackage[T1]{fontenc}
+
+\title{我的 Linux 工作环境}
+
+\author{作者姓名： 唐浩 \\ 作者专业和学号： 信息与计算科学 3200102118}
+
+\begin{document}
+
+\maketitle
+
+以下我将简要介绍我自己的 Linux 工作环境：
+
+\section{发行版本名称及版本号}
+
+版本名称： ubuntu 20.04.4 LTS
+
+版本号： 20.04
+
+\section{调整系统}
+
+\subsection{系统安装}
+
+我在网上搜索教程，进行了一个双系统的安装（Windows 10 系统以及 Ubuntu 20.04 版本），由于我电脑里面转载了两块硬盘，故我不需要将 Windows 系统所占用的空间进行分割，我将两个系统分别放进了两个硬盘空间里面。（我采用的是U盘安装系统）\cite[page 1]{orangeye2009玩转}
+
+\subsection{系统配置}
+
+安装完成 Ubuntu 系统后，我依照钉钉里面学在浙大课程 ``数学软件” 里面的课件——设置你的工作环境，进行 Linux 工作环境的设置{\bf (当然，在此之前我已经 install 了 synaptic)};跟着讲解视频，我依次标记了 gcc, g++, emacs, dxygen, make, cmake, automake, ssh, git, x11, dx 等许多安装包，标记完成后，点击 Apply ，我采用的是 cn99 的源，速度还行吧。此外，我还自主安装了 MATLAB 2022a 以及 Dingtalk ,正准备尝试安装 QQ 以及 WeChat, 当然还有 Visual Studio Code。因为需要打开 pdf 文件，我同时安装了 okular，倒是 doxymacs 装不了。我还为 emacs 设置了可以输入中文的环境，在 .bashrc 中相关位置输入：
+
+{\bf alias emacs=`LC\_CTYPE=zh\_CN.utf8 emacs' }
+
+\section{规划工作}
+
+再下一步的话，我会将 Ubuntu 系统尽量配置成我熟悉的环境，开始熟练使用 Ubuntu，尽量减少由 Windows 带过来的一些不必要的习惯。我将继续学习使用 Latex， 学会使用命令来控制计算机，尽量多敲几遍 Latex 经常会用到的代码，并借此记住此代码，做到在没有模板的情况下，可以独自进行 Latex 文档的编辑输出。
+
+\subsection{使用场合}
+
+由于我决定从 Windows 转线到 Linux，所以今后但凡会用到电脑的地方，我都是使用 Ubuntu 系统进行操作，例如：
+
+2022-2023学年，秋冬学期的{\bf 数据结构和算法}这门课程，这门课需要我们使用 Ubuntu 系统下的 emacs 进行编译，主要使用 C++ 语言，这便要求我们使用 Linux 环境。
+
+2022-2023学年，秋冬学期的{\bf 数值分析}这门课程，这门课是由{\bf (老妖)}王何宇老师进行教授，依其的性格，多半也是使用 Linux 环境。
+
+其他的场合，多半是自己练习，自己进行编码的训练的时候会用到，毕竟我已经不准备使用 Windows 系统了。
+
+{\bf 此后但凡电脑所用之处,便是我使用 Linux 环境之时!}
+
+\subsection{分析环境}
+
+我觉得我目前的工作环境足够我现在所进行的一些工作，也就是满足了我当前的需求，至于未来，我认为是不够的，毕竟我如今的工作环境只是进行了一个初步的配置，还需要些什么配置，大概也只能等遇到问题的时候进行解决了，或者提前询问相关学长、老师，以获取一些建议。
+
+\section{工作保证}
+
+首先，你得保证自己的代码、文件等信息不会因为一些意外而导致丢失，这个时候，一些远程仓库就i很有必要了；你可以使用 github, gitee, 坚果云等，来存储自己代码文件，并且保证时常更新；
+
+每天检查系统更新，日常进行dbg；
+
+记住重要文件的位置，尽量不要因为忘记文件位置而最后导致文件的丢失；
+
+日志对于安全来说非常重要。日志里面记录了系统每天发生的各种各样的事情。可以通过日志来检查系统发生错误的原因，或者系统遭受攻击时留下的痕迹。日志的功能主要有：审计和监测。日志也可以实时的监测系统状态，监测和追踪入侵者。\cite[2]{李海涛2008基于}
+
+\bibliographystyle{plain}
+\bibliography{ckwx.bib}
+
+
+\end{document}
