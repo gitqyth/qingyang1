@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: homework4.aux
+The style file: plain.bst
+Illegal, another \bibstyle command---line 14 of file homework4.aux
+ : \bibstyle
+ :          {plain}
+I'm skipping whatever remains of this command
+Database file #1: ckwx.bib
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            515 strings with 4303 characters,
+and the built_in function-call counts, 739 in all, are:
+= -- 65
+> -- 27
+< -- 1
++ -- 13
+- -- 8
+* -- 33
+:= -- 134
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 38
+empty$ -- 66
+format.name$ -- 8
+if$ -- 155
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 5
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 22
+preamble$ -- 1
+purify$ -- 10
+quote$ -- 0
+skip$ -- 22
+stack$ -- 0
+substring$ -- 19
+swap$ -- 6
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 0
+while$ -- 7
+width$ -- 4
+write$ -- 33
+(There was 1 error message)

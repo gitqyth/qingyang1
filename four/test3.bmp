@@ -1,0 +1,75 @@
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp
+manderbrot.cpp:5:10: fatal error: bitmap.h: 没有那个文件或目录
+    5 | #include "bitmap.h"
+      |          ^~~~~~~~~~
+compilation terminated.
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp
+manderbrot.cpp:5:10: fatal error: bitmap.h: 没
+/usr/bin/ld: /tmp/cczDTpQJ.o: in function `main':
+manderbrot.cpp:(.text+0x57c): undefined reference to `build_bmp(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, char*)'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ manderbrot.cpp:5:10:：未找到命令
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp
+/usr/bin/ld: /tmp/cc1Exrcw.o: in function `main':
+manderbrot.cpp:(.text+0x57c): undefined reference to `build_bmp(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, char*)'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp
+/usr/bin/ld: /tmp/ccF37kMD.o: in function `main':
+manderbrot.cpp:(.text+0x57c): undefined reference to `build_bmp(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, char*)'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test
+bash: ./test: 没有那个文件或目录
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp
+/usr/bin/ld: /tmp/ccpKagJt.o: in function `main':
+manderbrot.cpp:(.text+0x57c): undefined reference to `build_bmp(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, char*)'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp
+/usr/bin/ld: /tmp/ccPfQEYg.o: in function `main':
+manderbrot.cpp:(.text+0x57c): undefined reference to `build_bmp(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, char*)'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+cc1plus: warning: /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp: not a directory
+/usr/bin/ld: /tmp/ccjwr7Up.o: in function `main':
+manderbrot.cpp:(.text+0x57c): undefined reference to `build_bmp(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, char*)'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp /home/qingyangth/下载/firefox下载/manderbrot-master/src/
+cc1plus: warning: /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp: not a directory
+/usr/bin/ld: 找不到 /home/qingyangth/下载/firefox下载/manderbrot-master/src/: file format not recognized
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp -I/home/qingyangth/下载/firefox下载/bitmap-master/src/ /home/qingyangth/下载/firefox下载/bitmap-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test
+bash: ./test: 没有那个文件或目录
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.cpp
+bash: ./test: 没有那个文件或目录
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ls
+ bitmap.cpp    main          main.cpp            manderbrot.cpp~  '#test.cpp#'   Window.h~
+ bitmap.cpp~  ' main.cpp'   '#manderbrot.cpp#'   Manderbrot.h      test.cpp
+ bitmap.h     '#main.cpp#'   manderbrot.cpp      test.bmp          Window.h
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o main manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.cpp
+bash: ./test: 没有那个文件或目录
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp
+bash: ./test: 没有那个文件或目录
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp
+Usage: ./test filename ox oy dimension
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 1.0
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 1.0 1.0
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 1.0
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 1.0
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 1.0
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 0.1
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.45 1.0
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 10
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 5
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test1.bmp 0.0 0.0 5
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test2.bmp 0.0 0.0 5
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test.bmp 0.0 0.0 5
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ g++ -o test manderbrot.cpp -I/home/qingyangth/下载/firefox下载/manderbrot-master/src/ /home/qingyangth/下载/firefox下载/manderbrot-master/src/bitmap.cpp
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ ./test test3.bmp 0.0 0.0 5
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/下载/firefox下载/manderbrot-master/src$ 
