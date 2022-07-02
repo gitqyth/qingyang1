@@ -1,0 +1,96 @@
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ g++ -o test roots.c
+/usr/bin/ld: /tmp/cc3k6Obb.o: in function `main':
+roots.c:(.text+0x1bd): undefined reference to `gsl_root_fsolver_brent'
+/usr/bin/ld: roots.c:(.text+0x1cd): undefined reference to `gsl_root_fsolver_alloc'
+/usr/bin/ld: roots.c:(.text+0x1f6): undefined reference to `gsl_root_fsolver_set'
+/usr/bin/ld: roots.c:(.text+0x202): undefined reference to `gsl_root_fsolver_name'
+/usr/bin/ld: roots.c:(.text+0x26a): undefined reference to `gsl_root_fsolver_iterate'
+/usr/bin/ld: roots.c:(.text+0x279): undefined reference to `gsl_root_fsolver_root'
+/usr/bin/ld: roots.c:(.text+0x28e): undefined reference to `gsl_root_fsolver_x_lower'
+/usr/bin/ld: roots.c:(.text+0x2a3): undefined reference to `gsl_root_fsolver_x_upper'
+/usr/bin/ld: roots.c:(.text+0x2d3): undefined reference to `gsl_root_test_interval'
+/usr/bin/ld: roots.c:(.text+0x35c): undefined reference to `gsl_root_fsolver_free'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ gcc -o test roots.c -I/home/qingyangth/include/ -L/home/qingyangth/lib -lgsl -lm -lgslcblas
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ./test
+./test: error while loading shared libraries: libgsl.so.27: cannot open shared object file: No such file or directory
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ sudo find / -name libgsl.so.27 -print
+[sudo] qingyangth 的密码： 200815th
+
+find: ‘/run/user/1000/doc’: 权限不够
+find: ‘/run/user/1000/gvfs’: 权限不够
+find: ‘/run/user/125/gvfs’: 权限不够
+/home/qingyangth/lib/libgsl.so.27
+/home/qingyangth/qingyang1/bmp/gsl-2.7.1/.libs/libgsl.so.27
+find: ‘/proc/1647/task/1647/net’: 无效的参数
+find: ‘/proc/1647/net’: 无效的参数
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ sudo find / -name libgsl.so -print
+find: ‘/run/user/1000/doc’: 权限不够
+find: ‘/run/user/1000/gvfs’: 权限不够
+find: ‘/run/user/125/gvfs’: 权限不够
+/home/qingyangth/lib/libgsl.so
+/home/qingyangth/qingyang1/bmp/gsl-2.7.1/.libs/libgsl.so
+find: ‘/proc/1647/task/1647/net’: 无效的参数
+find: ‘/proc/1647/net’: 无效的参数
+/usr/lib/x86_64-linux-gnu/libgsl.so
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ln -s ~/qingyang1/bmp/gsl_2.7.1/.libs/libgsl.so.27 ~/qingyang1/github/find_root
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ./test
+./test: error while loading shared libraries: libgsl.so.27: cannot open shared object file: No such file or directory
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ./test
+./test: error while loading shared libraries: libgsl.so.27: cannot open shared object file: No such file or directory
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ls
+demo_fn.c  demo_fn.h  roots  roots.c  roots.c~  test
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ls
+demo_fn.c  demo_fn.h  libgsl.so.27  roots  roots.c  roots.c~  test
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ./test
+./test: error while loading shared libraries: libgsl.so.27: cannot open shared object file: No such file or directory
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ LD_LIBRARY_PATH=. ./test
+./test: error while loading shared libraries: libgsl.so.27: cannot open shared object file: No such file or directory
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ls
+demo_fn.c  demo_fn.h  libgsl.so.27  roots  roots.c  roots.c~  test
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ls
+demo_fn.c  demo_fn.h  libgsl.so.27  roots  roots.c  roots.c~  test
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ LD_LIBRARY_PATH=. ./test
+using brent method
+ iter [    lower,     upper]      root        err  err(est)
+    1 [1.0000000, 5.0000000] 1.0000000 -1.2360680 4.0000000
+    2 [1.0000000, 3.0000000] 3.0000000 +0.7639320 2.0000000
+    3 [2.0000000, 3.0000000] 2.0000000 -0.2360680 1.0000000
+    4 [2.2000000, 3.0000000] 2.2000000 -0.0360680 0.8000000
+    5 [2.2000000, 2.2366300] 2.2366300 +0.0005621 0.0366300
+Converged:
+    6 [2.2360634, 2.2366300] 2.2360634 -0.0000046 0.0005666
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ls
+demo_fn.c  demo_fn.h  libgsl.so.27  roots  roots.c  roots.c~  test
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ g++ roots.c -o roots `root-config --cflags --libs`
+
+Command 'root-config' not found, but can be installed with:
+
+sudo snap install root-framework
+
+/usr/bin/ld: /tmp/ccz36UGX.o: in function `main':
+roots.c:(.text+0x1bd): undefined reference to `gsl_root_fsolver_brent'
+/usr/bin/ld: roots.c:(.text+0x1cd): undefined reference to `gsl_root_fsolver_alloc'
+/usr/bin/ld: roots.c:(.text+0x1f6): undefined reference to `gsl_root_fsolver_set'
+/usr/bin/ld: roots.c:(.text+0x202): undefined reference to `gsl_root_fsolver_name'
+/usr/bin/ld: roots.c:(.text+0x26a): undefined reference to `gsl_root_fsolver_iterate'
+/usr/bin/ld: roots.c:(.text+0x279): undefined reference to `gsl_root_fsolver_root'
+/usr/bin/ld: roots.c:(.text+0x28e): undefined reference to `gsl_root_fsolver_x_lower'
+/usr/bin/ld: roots.c:(.text+0x2a3): undefined reference to `gsl_root_fsolver_x_upper'
+/usr/bin/ld: roots.c:(.text+0x2d3): undefined reference to `gsl_root_test_interval'
+/usr/bin/ld: roots.c:(.text+0x35c): undefined reference to `gsl_root_fsolver_free'
+collect2: error: ld returned 1 exit status
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ g++ roots.c -o roots   `root-config --cflags --libs` -I/home/qingyangth/include/ -L/home/qingyangth/lib -lgsl -lm -lgslcblas
+
+Command 'root-config' not found, but can be installed with:
+
+sudo snap install root-framework
+
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ sudo snap install root-framework
+[sudo] qingyangth 的密码： 200815th
+
+root-framework v6-26-04 已从 James Carroll 安装
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ g++ roots.c -o roots   `root-config --cflags --libs` -I/home/qingyangth/include/ -L/home/qingyangth/lib -lgsl -lm -lgslcblas
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ ls
+demo_fn.c  demo_fn.h  libgsl.so.27  roots  roots.c  roots.c~  test
+qingyangth@qingyangth-ASUS-TUF-Gaming-F15-FX506LI-FX506LI:~/qingyang1/github/find_root/src$ 

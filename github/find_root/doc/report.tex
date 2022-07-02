@@ -1,0 +1,22 @@
+\documentclass[a4paper,12pt]{ctexart}
+
+\usepackage{graphicx}
+\usepackage{xltxtra}
+\usepackage{amsmath}
+\usepackage{float}
+
+\title{对 roots.c 的分析}
+\author{作者姓名： 唐浩 \\ 作者专业学号： 信息与计算科学 3200102118}
+
+\begin{document}
+\maketitle
+
+在 roots.c 中，定义了多个参数： status, iter, r, $r\_expected, x\_lo, x\_hi$, 同时还定义了两个指针: *T, *S。将 quadratic, params 的地址取出来存储进函数 F 中。
+
+首先打印出各个数据的名称： iter, lower, upper, root, err, err(est)。
+
+然后进行 do-while 循环，以数据 status 的值和 iter 的值作为判定条件，如果 status == GSL\_CONTINUE 并且 iter < max\_iter, 则循环继续，否则结束循环，输出 Converged: 以及最后的数据。
+
+{\bf 最后的最后，我真的看不懂代码表达了什么 \ldots}
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass[a4paper,12pt]{xtexart}
+
+\usepackage{graphicx}
+\usepackage{xltxtra}
+\usepackage{amsmath}
+\usepackage{float}
+
+\author{作者姓名： 唐浩 \\ 作者专业学号： 信息与计算科学 3200102118}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
