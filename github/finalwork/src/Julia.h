@@ -46,14 +46,14 @@ public:
 	virtual bool is_disconvergence() = 0;
 };
 
-class Manderbrot : public Iteration
+class Julia : public Iteration
 {
 public:
-	Manderbrot() : Iteration() {};
-	Manderbrot(std::complex<double> _ip,
+	Julia() : Iteration() {};
+	Julia(std::complex<double> _ip,
 			   int _max_it,
 			   std::complex<double> _ic) : Iteration(_ip, _max_it, _ic) {};
-	Manderbrot(double _ix,
+	Julia(double _ix,
 			   double _iy,
 			   int _max_it,
 			   double _cx,
@@ -63,7 +63,7 @@ public:
 	virtual bool is_disconvergence();
 };
 
-void Manderbrot::forward_step()
+void Julia::forward_step()
 {
 	iteration_point = iteration_point * iteration_point + iteration_const;
 	iteration_times++;
@@ -73,11 +73,11 @@ void Manderbrot::forward_step()
 		flag_stop = true;
 };
 
-bool Manderbrot::stop_criterion()
+bool Julia::stop_criterion()
 {
 	return flag_stop;
 };
-bool Manderbrot::is_disconvergence()
+bool Julia::is_disconvergence()
 {
 	return flag_disconvergence;
 };

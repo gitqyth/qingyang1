@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{cite}
+\usepackage{url}
 \usepackage{multirow}
 \usepackage{float}
 \usepackage{xltxtra}
@@ -71,6 +72,11 @@
 
 \section{算法}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.85]{julia.pdf}
+\end{figure}
+
 \section{数值算例}
 
 迭代次数取 N = 100,选取不同的常数 C， 将会得到不同的 Julia Set，以下我们简要选取几个常数 C 的值，通过计算机生成的bmp图像来观察不同的 C 所产生的 Julia Set：
@@ -117,7 +123,7 @@
 
 与我们看到的其他分形不同，Mandelbrot Set 的结构不是自相似的。相反，它在不同的地方有完全不同的局部结构。新的结构在每一个尺度上都被揭示出来，而这种模式似乎并不重复。同样的事情几乎会发生在 Mandelbrot Set 中的任何一点上，在每一点上都会显示出不同的结构。
 
-Mandelbrot Set 与 Julia Set 都是由迭代关系: $z_{n+1} = z_n + C$ 所产生的点集，只不过两者一个由 z 产生，一个由 C 产生，在计算机上表现的不同便是一个遍历 z ，一个遍历 C 。
+Mandelbrot Set 与 Julia Set 都是由迭代关系: $z_{n+1} = z_n + C$ 所产生的点集，只不过两者一个由 z 产生，一个由 C 产生，在计算机上表现的不同便是一个遍历 z ，一个遍历 C 。 \cite{JuliaSet}
 
 \section{结论}
 

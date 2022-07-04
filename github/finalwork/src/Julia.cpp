@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Window.h"
-#include "Manderbrot.h"
+#include "Julia.h"
 #include "bitmap.h"
 
 int main(int argc, char *argv[])
@@ -28,16 +28,16 @@ int main(int argc, char *argv[])
 			double x = ox + lpp * i;
 			double y = oy + lpp * j;
 			int pos = width * j + i; 
-			Manderbrot man(std::complex<double>{x,y},
+			Julia jul(std::complex<double>{x,y},
 						   N,
 				       std::complex<double>{0,0});
-			while (!man.stop_criterion())
+			while (!jul.stop_criterion())
 			{
-				man.forward_step();
-				if (man.is_disconvergence())
+				jul.forward_step();
+				if (jul.is_disconvergence())
 					break;
 			}
-			if (man.stop_criterion())
+			if (jul.stop_criterion())
 		        {
 			  cache[pos * 3] = 255;
 			  cache[pos * 3 + 1] = 255;
